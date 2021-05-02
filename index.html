@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<meta charset = "UTF-8">
+		<script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.min.js"></script>
+		<title>ML Review</title>
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+		<style>
+			html {
+				background-color: lightgray;
+			}
+			body {
+				font-family: 'Lato', sans-serif;
+			}
+			h1 {
+				text-align: center;
+				font-weight: "bold";
+			}
+			#ul {
+				text-decoration: underline;
+			}
+			h2 {
+				text-align: center;
+				font-weight: "bold";
+				text-decoration: underline;
+			}
+			li {
+				padding: 2px;
+				text-align: justify;
+			}
+			p, h3 {
+				text-align: center;
+			}
+			#lr {
+				text-align: center;
+			}
+			canvas {
+				position: absolute; 
+				left: 50%; 
+				margin-left: -300px; /* This is half the width */
+				padding-top: 5px; 
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id = "ul">Arjun's Machine Learning Review Webpage</h1>
+
+		<p><strong>What have I directly observed?</strong> I have observed that there are a lot of libraries that you can use to build ML models that make the process a lot easier. They make it very easy to test out different functionality and try out different things like activation functions, optimizers, number of epochs, and the learning rate. They also make it extremely simple to add and remove new layers and neurons.</p>
+		<p><strong>What do I think?</strong> I think that there were a lot of difference in just the last two Colab notebooks we looked at / designed. That makes it a lot more difficult to understand how to build a neural network and how it works, because the code is so different for each with very little explanation on what each of the lines are doing. While it gives an overview of what a chunk of code does, it would be helpful to understand specifically what each line is doing so we don't have to copy the entire example when building our own projects.</p>
+		<p><strong>What do I understand?</strong> I understand the WHY of why/how machine learning models work. I understand the math that goes on and how it evaulates inputs, etc. But, I don't fully understand the HOW. How does back propagation work? How can I teach a neural network to learn something and be trained without being handed a library that can do it for me? How can I make my projects unique rather than what the person who designed the library wants users to make?</p>
+		<p><strong>What am I trying to learn more about, and / or what would I like to understand better?</strong> I would like to better understand how neural networks learn by adjusting their weights and biases. I think it would be interesting to try and learn how to make an ML bot that can do that without using and pre-made libraries. Also, I have seen in AI youtube videos of visual ML models that show the nodes and connections lighting up as the neurons fire. I would like to learn how to make that be visualized as well.</p>
+
+			<div>
+			<h2>Other important links we have used:</h2>
+			<ul>
+				<li><a href = "https://medium.com/tebs-lab/introduction-to-deep-learning-a46e92cb0022">Intro to Deep Learning</a></li>
+				<li><a href = "https://docs.google.com/document/d/1w65GznE6N5EPLFG2KQr5oNM8ZDbY6N24IcuYYduz4y4/edit?usp=sharing">Index of Projects</a></li>
+			</ul>
+		</div>
+
+		<h2>Vocabulary</h2>
+		<ul>
+			<li><strong><u>Model:</u></strong> A machine learning model is a program that is trained using initial sample data to process additional data and make predictions using learned patterns. ML models are not explicitly coded to carry out their tasks; instead, they learn automatically using sample data.</li>
+			<li><strong><u>Samples:</u></strong> Samples are the example data that are used as training samples and test samples (which are defined later on) during the ML model’s training. Samples for classification models are manually classified ahead of time by humans, so the program knows what it is learning to classify and can compare test samples to training samples.</li>
+			<li><strong><u>Class:</u></strong> With regard to classification ML models, classes are the categories that models aim to sort new data into. For simple models such as those built on Teachable Machine, any potential class the model can sort new data into must be defined during the model’s training stages.</li>
+			<li><strong><u>Training:</u></strong> Training refers to the process by which ML models learn and improve their abilities to detect patterns and carry out tasks automatically (without being hard-coded to do so). The process normally involves multiple iterations of using some samples to detect and learn patterns, and others to test the model’s current capabilities.</li>
+			<li><strong><u>Epoch:</u></strong> The number of epochs in an ML model’s training refers to the number of times that the model works through the entire sample data set. Models tend to increase their accuracy and decrease their loss (which are defined later on) with each additional epoch, so training with more epochs tends to make a more robust model. However, accuracy and loss will plateau after a certain point. </li>
+			<li><strong><u>Batch Size:</u></strong> The batch size in an ML model’s training refers to the number of samples the model will work through before updating its internal parameters. The model loops through each batch, making predictions, and at the end of the batch, the model compares its predictions to test data and calculates the error. From this, an update algorithm improves upon the model.</li>
+			<li><strong><u>Learning Rate:</u></strong> An ML model’s learning rate is a metaphorical representation of how quickly the model “learns”. It is one parameter in the model’s algorithm that determines the step size at each iteration while trying to achieve the lowest possible loss.</li>
+			<li><strong><u>Training Samples vs Test Samples:</u></strong> During an ML model’s training, the data samples are separated into two categories: training samples and test samples. ML models on Teachable Machine maintain a ratio of about 85% of the samples being training samples, and the rest being test samples. The model first analyzes the training samples to learn how to classify new data, then practices using the never-seen-before test samples to test accuracy and confidence.</li>
+			<li><strong><u>Underfit:</u></strong> “Underfitting” describes the effect when an ML model does not fully capture the complexity of the training samples, and ends up with too broad a classification range. In other words, the model develops such a broad understanding of what a certain class can be that it classifies new data poorly because it thinks two different things can be the same thing.</li>
+			<li><strong><u>Overfit:</u></strong> “Overfitting” describes the effect when an ML model learns based on the training samples so specifically that it is unable to identify any new sample data, including test samples. The model develops such a specific understanding of what a certain class can be that it classifies new data poorly because it doesn’t think there can be a difference between it and training data.</li>
+			<li><strong><u>Accuracy per Class:</u></strong> Accuracy per class is a measure, expressed as a percentage, of how many test samples out of the total number of test samples (for a given class) that the model is able to correctly classify during training. This measure is unaffected by how confident the model is for any classification; it simply looks at whether the classification was correct or not.</li>
+			<li><strong><u>Confusion Matrix:</u></strong> A confusion matrix is a summary of the predictions made by an ML model. It shows the ways in which a classification model is confused when it makes predictions, and gives insight into the types of errors being made.</li>
+			<li><strong><u>Accuracy per Epoch:</u></strong> Accuracy per epoch is a measure, expressed as a percentage, of how many test samples out of the total number of test samples an ML model is able to correctly classify in a given epoch. When plotted on a graph, the trend gives you a sense of how much the model is learning and improving with each additional epoch. This measure is unaffected by how confident the model is for any classification; it simply looks at whether the classification was correct or not.</li>
+			<li><strong><u>Loss per Epoch:</u></strong> Loss per epoch is a measure, expressed as a percentage, of how confident an ML model is in its predictions in a given epoch. This measure is unaffected by whether the model correctly classifies new data; it just looks at how confident it is in its prediction. When plotted on a graph, the trend gives you a sense of if the model is getting more confident (and therefore more accurate) in its predictions with each additional epoch.</li>
+		</ul>
+
+		<div>
+			<h1><a href = "https://en.wikipedia.org/wiki/Linear_regression">Linear Regression</a> Grapher</h1>
+			<h3>Click the graph to add data points. The program will automatically plot the <a href = "https://en.wikipedia.org/wiki/Line_fitting">line of best fit.</a></h3>
+			<h3>(600x600px Canvas)</h3>
+			<p>Slope:</p>
+			<p id = "slope">NaN</p>
+			<p>Y-Intercept:</p>
+			<p id = "yint">NaN</p>
+
+			<script src="script1.js"></script>
+		</div>
+
+		<div>
+			<h1><a href = "https://en.wikipedia.org/wiki/Linear_regression">Linear Regression</a> using <a href = "https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a></h1>
+			<p>Click to plot points. The computer will calculuate the regression line using gradient descent.</p>
+			<p>Input a learning rate below (0 - 100). Press ESC to reset.</p>
+			<div id = "lr">
+				<input id = "learningrate" type = "number" value = 50>
+			</div>
+			<p id = "equation">Regression Equation: y = m * x + b</p>
+			<script src="script2.js"></script>
+		</div>
+	</body>
+</html>
