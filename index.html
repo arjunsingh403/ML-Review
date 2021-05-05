@@ -37,8 +37,11 @@
 			canvas {
 				position: absolute; 
 				left: 50%; 
-				margin-left: -300px; /* This is half the width */
+				margin-left: -300px; 
 				padding-top: 5px; 
+			}
+			img {
+				width: 100%;
 			}
 		</style>
 	</head>
@@ -50,11 +53,27 @@
 		<p><strong>What do I understand?</strong> I understand the WHY of why/how machine learning models work. I understand the math that goes on and how it evaulates inputs, etc. But, I don't fully understand the HOW. How does back propagation work? How can I teach a neural network to learn something and be trained without being handed a library that can do it for me? How can I make my projects unique rather than what the person who designed the library wants users to make?</p>
 		<p><strong>What am I trying to learn more about, and / or what would I like to understand better?</strong> I would like to better understand how neural networks learn by adjusting their weights and biases. I think it would be interesting to try and learn how to make an ML bot that can do that without using and pre-made libraries. Also, I have seen in AI youtube videos of visual ML models that show the nodes and connections lighting up as the neurons fire. I would like to learn how to make that be visualized as well.</p>
 
-			<div>
-			<h2>Other important links we have used:</h2>
+		<div>
+			<h2>Some other important links we have used:</h2>
 			<ul>
 				<li><a href = "https://medium.com/tebs-lab/introduction-to-deep-learning-a46e92cb0022">Intro to Deep Learning</a></li>
 				<li><a href = "https://docs.google.com/document/d/1w65GznE6N5EPLFG2KQr5oNM8ZDbY6N24IcuYYduz4y4/edit?usp=sharing">Index of Projects</a></li>
+				<li><a href = "https://en.wikipedia.org/wiki/Gradient_descent">Gradient Descent</a></li>
+			</ul>
+		</div>
+
+		<div>
+			<h2>My projects!</h2>
+			<ul>
+				<li><a href = "https://teachablemachine.withgoogle.com/models/KYN_TuJY3/">Hunger Games Books Classfier</a></li>
+				<li><a href = "https://teachablemachine.withgoogle.com/models/c_3DrfGea/">Stringed Instrument Classifer</a></li>
+				<li><a href = "https://teachablemachine.withgoogle.com/models/WuL3w5m7i/">Red/Green/Blue Audio Classifier</a></li>
+				<li><a href = "https://teachablemachine.withgoogle.com/models/NrhxHWD5d/">Cello Strings Audio Classifier</a></li>
+				<li><a href = "https://teachablemachine.withgoogle.com/models/W-R8WL3Fs/">Arms Up Poses Classifier</a></li>
+				<li><a href = "https://teachablemachine.withgoogle.com/models/3AaxTwiO3/">Dance Poses Classifier</a></li>
+				<li><a href = "https://arjun-pose-recognizer.glitch.me">Glitch Webpage</a></li>
+				<li><a href = "https://arjunsingh403.github.io/Word2Vec/">Word2Vec</a></li>
+				<li><a href = "https://arjunsingh403.github.io/linearregression/">Linear Regression Github Pages</a></li>
 			</ul>
 		</div>
 
@@ -75,6 +94,19 @@
 			<li><strong><u>Accuracy per Epoch:</u></strong> Accuracy per epoch is a measure, expressed as a percentage, of how many test samples out of the total number of test samples an ML model is able to correctly classify in a given epoch. When plotted on a graph, the trend gives you a sense of how much the model is learning and improving with each additional epoch. This measure is unaffected by how confident the model is for any classification; it simply looks at whether the classification was correct or not.</li>
 			<li><strong><u>Loss per Epoch:</u></strong> Loss per epoch is a measure, expressed as a percentage, of how confident an ML model is in its predictions in a given epoch. This measure is unaffected by whether the model correctly classifies new data; it just looks at how confident it is in its prediction. When plotted on a graph, the trend gives you a sense of if the model is getting more confident (and therefore more accurate) in its predictions with each additional epoch.</li>
 		</ul>
+
+		<h2>Activation Functions</h2>
+		<ul>
+			<li><strong><u>What exactly is an activation function, and generally speaking why is it important for ML with NNs?</u></strong> An activation function in a neural network is a function that defines how the weighted sum of the input is transformed into an output from a node or nodes in a layer of the network (ML Mastery). Activation functions with a limited output range are helpful for keeping outputs within a fixed range. Additionally, nonlinear activation functions contribute to the “nonlinearity” of layers in a neural network.</li>
+			<li><strong><u>In the examples of multilayer neural networks we have built and played with so far, there are weights and biases making adjustments to inputs, but we have seen we still need to have the activation function on top of weights and biases; so in your own words, what distinguishes the activation function from weights and biases?</u></strong> One difference between activation functions and weights and biases in a neural network is that the activation function is applied after the weights and biases have been applied to each set of inputs. If the neural network requires an activation function with a limited output range such as sigmoid, not applying an activation function could result in extreme results as the weights and biases yield outputs that are too large. Activation functions are necessary to keep the outputs of each node within the range that the neural network can handle, so the network does not yield extreme and incorrect results. Another important distinction between activation functions and weights and biases is once defined, activation functions cannot be modified by the neural network. During the process of learning, neural networks often adjust their weights (and sometimes biases) to fit the training data, but it will never modify the activation function.</li>
+			<li><strong><u>What differences are there between different activations (sigmoid, ReLU, etc.), and why might one activation be better suited to a given project than another? Explain with citations to the readings below.</u></strong> Citations: ML Cheatsheet and ML Mastery. One key difference between activation functions is their output range. Some activation functions, such as linear, ELU, and ReLU, have an unlimited range and will output values directly proportional to the input value (sometimes after a threshold), no matter how extreme. But, other activation functions, such as sigmoid and tanh, have a limited range. This difference can make one type of activation function better suited for a project than another; for example, in some neural networks (like XOR) you want your output to simply be true or false. Activation functions like sigmoid with a limited range are better suited to this project because you can assign an output of 1 to be true and an output of 0 to be false (or some other straightforward format), whereas activation functions with an unlimited range do not always yield such simple and comprehensible outputs. It may also be helpful to use one type of activation function over another given the magnitude of the weights and biases in the neural network (if they are predetermined like in our XOR example). For example, if the weights and biases have a magnitude greater than 1, it may be beneficial to use an activation function with a limited range, so outputs do not grow out of control. However, if the weights and biases have a magnitude that is less than 1 (like the other examples we explored in class), other activation functions can be used just fine. Activation functions with an unlimited range like ReLU may also be better if you want your outputs to easily correspond to your inputs, and have a wide variety of potential outputs. It is important to note that while you must use the same activation function for the entirety of any given layer in a neural network, you can use different activation functions across layers. Thus, the choice of which activation function you use on each layer depends on what you want your outputs to be like.</li>
+		</ul>
+
+		<h2>Simple Neural Network (for XOR)</h2>
+		<img src="xor.png" alt="XOR Neural Network">
+		<img src="math.png">
+		<img src="sigmoid.png">
+		<img src="eq.png">
 
 		<div>
 			<h1><a href = "https://en.wikipedia.org/wiki/Linear_regression">Linear Regression</a> Grapher</h1>
